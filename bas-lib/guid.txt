@@ -1,0 +1,12 @@
+1，由架构师选用基础技术栈
+2，使项目开发之间的版本统一，便于问题沟通，集中处理（在此基础库中修复，不叠加到应用）
+3，若特殊要求(如某项目组使用最新组件库)，可新建分支(develop)
+
+使用基础库
+	vue
+	vuex
+	vue-router
+	element-ui
+	fetch(vue-resource使用在vue实例中，不易提取;axios(前端不需要兼容node,并且fetch在谷歌中原生支持))
+	store.js
+	js-cookie

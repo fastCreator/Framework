@@ -1,0 +1,17 @@
+{
+  "name": "bas-lib",
+  "version": "1.0.0",
+  "description": "basic-lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "coco",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "element-ui": "^2.0.5",
+    "vue": "^2.5.7",
+    "vuex": "^3.0.1"
+  }
+}

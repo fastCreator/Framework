@@ -1,0 +1,67 @@
+1，SEO 服务端渲染（ssr） 传统渲染 preRender
+
+basic(基础层)(架构师预先定义的)
+	vue
+	vuex(全局共享数据,事件发射)
+	vue-router
+	store
+		js-cookie 3.1kb 
+		store.js 4.8kb
+	(对于,storage等本地存储封装)
+	server(fetch,jax请求过滤,mock数据，统计数据)
+	basic-component(element-ui基础组件)
+	basic-style(element-ui.css基础样式库)
+
+com(平台)(专人管的) 
+	com(com-lib)(删除代码引用过程,脚本读取目录结构)
+		com-components(公用组件：1,常用基础组件（一次性加载）2,独立组件(内容较大，不常见组件懒加载))  type:basic|lazy
+		com-style(公用样式)
+		com-directive(公用指令) 
+		com-utils(全局工具类,window.$utils)
+		com-mixin(permission)
+
+container(应用页容器)(架构师维护)
+	页面：404 401等
+	轮廓：left-nav top-nav
+	config:
+		端口号
+		代理配置
+		加载(自动识别html模板引入) 1,auto(根据组件类型判别)) 2,lazy(全部懒加载) 3,direct(全部直接统一加载) 4,user(用户自定义){lazy:}{direct:}其他auto
+	index.html 常见基础库请使用CDN,或者自行引入
+	应用页:引用方式(import)，加载应用页为一个新的vue实例
+
+cli(手脚架) 
+	template
+		container 应用页容器
+		page 应用页
+	build
+		platform 打包,运行环境
+		com 公共库运行demo
+	utils
+		menu 解析后台固定格式文档,自动生成基础(权限,格式)menu.json
+		router 解析menu自动生成router
+
+app(应用)(开发人员管的)
+	pageName
+		menu.json(权限，路由配置)
+		index.vue(应用展示页)
+		server.js(ajax封装) (即使目前只有两个地方用到，使之与业务逻辑解耦，放入组件库)
+
+git工作流
+	pull reqeust
+	层次之间引用使用git方式，项目实践中得出git方式更为简便
+
+框架层解决
+	basic:
+		1，防止重复提交(window.event ajax 添加class(is-loading))
+	common:
+	    1，权限系统（读取menu,权限接口,mixin:在应用页实例，生成root对象，用于判别权限（mixin)
+	container:
+		1,应用页加载
+		2,404等特殊页面
+		3,总体管控
+	cli:
+		1,menu.json 可配置某些展示型页面,服务端渲染(issr),懒加载(islazy)
+		2,nav,route,根据menu生成，route中添加nav属性，跟踪面包屑 this.$router中存储应用信息
+
+

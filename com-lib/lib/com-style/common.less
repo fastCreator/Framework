@@ -1,0 +1,63 @@
+/*一般布局样式*/
+
+/*路由部分左右布局布局样式*/
+.el-mainContainer-router{
+    min-width:1160px;
+  }
+  .normal-content>.left{
+      float: left;
+      width: 240px;
+      vertical-align: top;
+    }
+    .normal-content>.right {
+      vertical-align: top;
+      position: relative;
+      margin-left: 260px;
+    }
+    /*路由部分中间表格布局布局样式*/
+    .normal-content{
+      padding:20px;
+    }
+    
+    /*全局样式*/
+    *{
+      box-sizing: border-box;
+      font-family: "Microsoft YaHei";
+    }
+    
+    /*scrollbar插件样式*/
+    .mCSB_inside>.mCSB_container {
+      margin-right: 4px;
+    }
+    .mCSB_scrollTools{
+      width: 4px;
+    }
+    .el-transfer-panel__body{
+      padding-bottom:0px !important;
+    }
+    /*IE不显示X*/
+    ::-ms-clear{display: none;}
+    ::-ms-reveal{display: none;}
+    
+    /* 覆盖eleme样式 */
+    /* start */
+    /* dialog header下划线 */
+    .el-dialog .el-dialog__header{
+      padding: 0px 20px 0;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #d3dce6
+    }
+    
+    .el-dialog .el-dialog__close{
+      line-height: 50px;
+    }
+    
+    .el-dialog .el-message-box__content{
+      padding: 20px 20px 30px;
+    }
+    .el-dialog .el-message-box__title{
+      padding-bottom: 10px;
+      height: auto;
+    }
+    

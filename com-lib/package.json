@@ -1,0 +1,11 @@
+{
+  "name": "com-lib",
+  "version": "1.0.0",
+  "description": "commom-lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "coco",
+  "license": "ISC"
+}
